@@ -34,39 +34,45 @@
 </style>
 <section>
 
-    <form class="container-lg d-flex flex-column col-12 mt-2 justify-content-center align-items-center login-wrapper" data-hs-cf-bound="true">
+    <form [formGroup]="registform" class="container-lg d-flex flex-column col-12 mt-2 justify-content-center align-items-center login-wrapper" data-hs-cf-bound="true">
         <h4 class="text-left p-0 col-12 ">Register to account</h4>
         <p class="text-left w-100 mb-4">Enter your mobile &amp; password to login</p>
         <div class="login-form col-12">
             <div class="form-group position-relative">
-            <input type="name" class="form-control my-input-login" id="InputName" aria-describedby="nameHelp" placeholder="Enter Name" autocomplete="name">
+            <input type="text" class="form-control my-input-login" id="Inputname" formControlName="name" name="username"   required [(ngModel)]="singupmodal.name"  aria-describedby="nameHelp" placeholder="Enter Name" autocomplete="name">
+            <span class="text-danger" *ngIf="name && name.invalid && (name.dirty || name.touched)">Enter username number</span>
           </div>
           <div class="form-group  position-relative  mt-3 ">
-            <input type="email" class="form-control my-input-login" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email" autocomplete="email">
+            <input type="email" formControlName="email" class="form-control my-input-login" id="InputEmail" ngModel [email]="true" name="useremail" required [(ngModel)]="singupmodal.email" aria-describedby="emailHelp" placeholder="Enter email" autocomplete="email">
+            <span class="text-danger" *ngIf="email && email.invalid && (email.dirty || email.touched)">Enter email</span>
           </div>
           <div class="form-group  position-relative  mt-3 ">
-            <input type="number" class="form-control my-input-login" id="Inputmobile" placeholder="Enter mobile" autocomplete=" mobile">
+            <input type="text" formControlName="mobile" class="form-control my-input-login" (keypress)="numberOnly($event)" id="Inputmobile" ngModel [valueAsNumber]="true" name="usermobile" required [(ngModel)]="singupmodal.mobile" placeholder="Enter mobile" autocomplete=" mobile">
+            <span class="text-danger" *ngIf="mobile && mobile.invalid && (mobile.dirty || mobile.touched)">Enter Mobile number</span>
           </div>
           <div class="form-group  position-relative  mt-3 ">
-            <input type="password" class="form-control my-input-login" id="InputPassword" placeholder="Enter Password" autocomplete="current-password">
+            <input type="password" formControlName="password" class="form-control my-input-login" id="InputPassword" name="userpassword" required [(ngModel)]="singupmodal.password" placeholder="Enter Password" autocomplete="current-password">
+            <span class="text-danger" *ngIf="password && password.invalid && (password.dirty || password.touched)">Enter password number</span>
           </div>
           <div class="form-group  position-relative  mt-3 ">
-            <input type="text" class="form-control my-input-login" id="Inputmessage" placeholder="Enter Message" autocomplete=" message">
+            <input type="text" formControlName="discription" class="form-control my-input-login" id="Inputdiscription" name="userdiscription" required [(ngModel)]="singupmodal.discription" placeholder="Enter discription" autocomplete=" discription">
+            <span class="text-danger" *ngIf="discription && discription.invalid && (discription.dirty || discription.touched)">Enter discription </span>
           </div>
          
           <p class="text-danger text-center mt-3"></p>
         </div>
         <div class="col-12">
             <div class="form-check ">
-              <input class="form-check-input mt-1" type="checkbox" value="" name="iAgree" id="iAgree" required>
+              <input class="form-check-input mt-1" formControlName="cb" type="checkbox" value="" name="iAgree" id="iAgree" required>
               <label class="form-check-label text-secondary" for="iAgree">
                 I agree to the <a href="#!" class="link-primary text-decoration-none">terms and conditions</a>
               </label>
+              <span style="color: red; padding-top: 0.2rem" *ngIf="registform.hasError('required', 'cb')">*</span>
             </div>
           </div>
           <div class="col-12">
             <div class="d-grid mt-3">
-              <button class="btn bsb-btn-xl btn-primary" type="submit">Sign up</button>
+              <button class="btn bsb-btn-xl btn-primary" [disabled]="registform.invalid"  type="button" (click)="Onsignup()">Sign up</button>
             </div>
           </div>
         
