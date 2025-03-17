@@ -8,9 +8,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import path from 'node:path';
 import { Component } from '@angular/core';
+import { UserService } from './users/user.service';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
+   
     {path:'', component:HomeComponent},
+    {path:'home', component:HomeComponent},
     {path:'login',component:LoginComponent},
     {path:'register',component:RegisterComponent},
     {path:'about', component:AboutComponent},

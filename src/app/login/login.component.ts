@@ -7,6 +7,7 @@ import { FormControl, FormGroup, FormsModule,Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CommonModule,  NgClass,  NgIf } from '@angular/common';
+import { UserService } from '../users/user.service';
 
 
 @Component({
@@ -18,13 +19,11 @@ import { CommonModule,  NgClass,  NgIf } from '@angular/common';
 })
  export class LoginComponent {
 
- 
-  
   loginModalObj: Login ;
   isSpanhidden: boolean = false;
 
 
-   constructor(private http:HttpClient, private router :Router){
+   constructor(private http:HttpClient, private router :Router, private userservice: UserService){
     this.loginModalObj = new Login();
     
    }
@@ -35,8 +34,7 @@ import { CommonModule,  NgClass,  NgIf } from '@angular/common';
       password: new FormControl('',Validators.required)
   
     })
-   
-
+  
    get mobile(){
     return this.loginforms.get('mobile');
    }
@@ -50,8 +48,16 @@ import { CommonModule,  NgClass,  NgIf } from '@angular/common';
 
     if(this.loginforms.valid) 
     {
-    this.http.post('https://localhost:7109/api/Users/Login',this.loginModalObj).subscribe((res:any)=>{
+    this.http.post('https://mnservice.azurewebsites.net/api/Users/Login',this.loginModalObj).subscribe((res:any)=>{
       if(res.result){
+        const usernamefromapi =res.message;
+        alert(res.message);
+        this.userservice.setUsername('Magesh');
+     
+        // Get updated user data after login
+        (this.userservice.getUsername()).substring
+
+        alert(this.userservice.getUsername());
         this.isSpanhidden = this.isSpanhidden
         this.router.navigateByUrl('');
       }else{     

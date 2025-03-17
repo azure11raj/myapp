@@ -17,14 +17,17 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
 
   singupmodal : Singupmodal;
-  
-  
+
+  ngOnInit() {
+    
+  }
 
   constructor(private http:HttpClient,private router:Router){
         this.singupmodal = new Singupmodal();
   }
   
-  registform = new FormGroup(
+
+  registform    = new FormGroup(
     {
       name : new FormControl('',Validators.required),
       email : new FormControl('',Validators.required),
@@ -34,7 +37,6 @@ export class RegisterComponent {
       cb: new FormControl(false,Validators.requiredTrue)
 
     })
-
     get name (){
       return this.registform.get('name');
     }
@@ -54,7 +56,7 @@ export class RegisterComponent {
 
   Onsignup(){
     debugger;
-    this.http.post('https://localhost:7109/api/Users/CreateUser',this.singupmodal).subscribe((res:any) =>{
+    this.http.post('https://mnservice.azurewebsites.net/api/Users/CreateUser',this.singupmodal).subscribe((res:any) =>{
       debugger;
       if(res.result){
         alert ('Registration is completed.Please login now!')
