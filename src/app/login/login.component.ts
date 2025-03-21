@@ -51,8 +51,8 @@ import { UserService } from '../users/user.service';
     this.http.post('https://mnservice.azurewebsites.net/api/Users/Login',this.loginModalObj).subscribe((res:any)=>{
       if(res.result){
         const usernamefromapi =res.message;
-        alert(res.message);
-        this.userservice.setUsername('Magesh');
+        //alert(res.message);
+        //this.userservice.setUsername('Magesh');
      
         // Get updated user data after login
         (this.userservice.getUsername()).substring
@@ -61,7 +61,7 @@ import { UserService } from '../users/user.service';
         this.isSpanhidden = this.isSpanhidden
         this.router.navigateByUrl('');
       }else{     
-        alert("Login Failed")
+        //alert("Login Failed")
       }
     });
   }

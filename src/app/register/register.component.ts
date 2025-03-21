@@ -64,7 +64,6 @@ export class RegisterComponent {
       }else{
         alert(res.message);
       }
-
     })
   }
 
