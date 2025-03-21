@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/21abf79e-49f4-4b55-8f7a-1109cdeb8ebb/resourceGroups/RG_MNCloud/providers/Microsoft.Web/sites/mncweb",
+    "appService.deploySubpath": "."
+}
