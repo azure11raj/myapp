@@ -1,40 +1,48 @@
 
-import { RouterLink, RouterModule } from '@angular/router';
+import { RouterLink, RouterModule,Router } from '@angular/router';
 import {  UserService } from '../users/user.service';
-import { Component} from '@angular/core';
+import { Component,OnInit} from '@angular/core';
+import { CommonModule,  NgClass,  NgIf } from '@angular/common';
 import { Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-header',
   standalone: true,
   
-  imports: [RouterModule,RouterLink],
+  imports: [RouterModule,RouterLink,NgIf],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
 
-   //currentuser : string ="Login";
+   currentuser: string="";
+   isLoging : boolean = false;
 
-   @Input() currentuser: any;
-
-  ngOnChanges() {
-    // React to input changes
-    console.log('Header updated with new user:', this.currentuser);
-  }
-
-  constructor( private userservice : UserService){
-      //this.currentuser = this.userservice.getUsername();
+  constructor( private userservice : UserService, private router:Router){
+      // this.currentuser = this.userservice.getUsername();
       
   }
   
-  ngOnInit() {
-    // this.currentuser = this.userservice.getUsername();
-    // console.log('User data in Dashboard:', this.currentuser);
+  ngOnInit():void {
     
-    // return this.currentuser;
-    // console.log('User data in Dashboard:', this.currentuser);
-  
+   this.userservice.username$.subscribe((username)=>{
+        this.currentuser=username;
+        this.isLoging = false;
+        if(this.currentuser !="")
+        {
+          this.isLoging = true;
+        }
+      
+      });
   }
+
+  getlogout(){
+    
+    this.isLoging = false;
+    this.router.navigateByUrl('/login');
+
+  }
+
 
 }

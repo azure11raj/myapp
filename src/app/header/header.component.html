@@ -4,10 +4,14 @@
       <a href="" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">MNCloud </h1>
+        <!-- <h1 class="sitename">MNCloud </h1> -->
+        <h1 class="sitename">MNCloud  </h1>
+       
         <!-- <img src="assets/img/MNC_Logo.png" alt="" /> -->
         
       </a>
+
+      <h6 *ngIf=isLoging style="text-align:center"> Welcome {{currentuser}} !  </h6> 
 
       <nav id="navmenu" class="navmenu">
         <ul>
@@ -17,6 +21,7 @@
           <li><a [routerLink]="['/courses']">Courses</a></li>
           <li><a [routerLink]="['/internship']">Internship</a></li>
           <li><a [routerLink]="['/certificate']">Certificate</a></li>
+          
           <!-- <li><a href="trainers.html">Trainers</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="pricing.html">Pricing</a></li>
@@ -44,7 +49,15 @@
 
       <!-- <a class="btn-getstarted"  data-bs-toggle="modal" data-bs-target="#staticBackdrop">Get Started</a> -->
       <!-- <a class="btn-getstarted" [routerLink]="['/login']" >Get Started</a> -->
+       <Div *ngIf=!isLoging  >
         <a class="btn-getstarted"  [routerLink]="['/login']" >Login</a>
+       </Div>
+      <!-- <div *ngIf=isLoging  >
+        <a class="btn-getstarted"  [routerLink]="['/login']" >{{currentuser}}</a>
+      </div> -->
+      <div *ngIf=isLoging >
+        <a class="btn-getstarted" (click)=getlogout()>Logout</a>
+      </div>
 
 
     </div>

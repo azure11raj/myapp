@@ -11,6 +11,7 @@ import path from 'node:path';
 import { Component } from '@angular/core';
 import { UserService } from './users/user.service';
 import { AppComponent } from './app.component';
+import { CertificateComponent } from './certificate/certificate.component';
 
 export const routes: Routes = [
    
@@ -21,5 +22,6 @@ export const routes: Routes = [
     {path:'about', component:AboutComponent},
     {path:'contact', component:ContactComponent},
     {path:'courses', component:CoursesComponent},
+    {path:'certificate',component:CertificateComponent},
     {path:'internship', component:InternshipComponent}
 ];

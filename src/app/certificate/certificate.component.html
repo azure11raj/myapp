@@ -1,0 +1,103 @@
+
+<div class="right">
+    <button (click)="generateCertificate()">Download</button>
+  </div>
+  <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    .certificate-container {
+        width: 80%;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: white;
+        border: 10px solid #4CAF50;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .certificate-header {
+        font-size: 36px;
+        font-weight: bold;
+        color: #4CAF50;
+        margin-bottom: 20px;
+    }
+
+    .certificate-body {
+        font-size: 20px;
+        margin: 20px 0;
+    }
+
+    .certificate-name {
+        font-size: 30px;
+        font-weight: bold;
+        color: #000;
+        margin-top: 10px;
+    }
+
+    .certificate-course {
+        font-size: 22px;
+        color: #555;
+    }
+
+    .certificate-footer {
+        margin-top: 40px;
+        font-size: 16px;
+        color: #555;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px;
+    }
+
+    .signature {
+        text-align: center;
+    }
+
+    .signature-line {
+        width: 200px;
+        border-top: 1px solid #000;
+        margin-top: 10px;
+    }
+
+    .footer-text {
+        text-align: center;
+        font-size: 14px;
+        color: #999;
+    }
+
+</style>    
+<div id="pfdcertificate" class="certificate-container">
+    <!-- Certificate Title -->
+    <div class="certificate-header">Certificate of Completion</div>
+
+    <!-- Body Text -->
+    <div class="certificate-body">
+        <p>This is to certify that</p>
+        <div class="certificate-name">[Student Name]</div>
+        <p>has successfully completed the course</p>
+        <div class="certificate-course">[Course Name]</div>
+        <p>on this day, [Date]</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="certificate-footer">
+        <div class="signature">
+            <p>Instructor</p>
+            <div class="signature-line"></div>
+        </div>
+        <div class="signature">
+            <p>Authorized Signature</p>
+            <div class="signature-line"></div>
+        </div>
+    </div>
+
+    <!-- Footer Text -->
+    <div class="footer-text">
+        <p>Thank you for completing the course at [Institute Name].</p>
+    </div>
+</div>
