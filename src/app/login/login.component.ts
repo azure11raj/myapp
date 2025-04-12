@@ -55,8 +55,7 @@ import { UserService } from '../users/user.service';
      
         // Get updated user data after login
         (this.userservice.getUsername()).substring
-       // alert(res.username);
-        //alert(this.userservice.getUsername());
+       
 
         localStorage.setItem('username',res.username);
         this.isSpanhidden = this.isSpanhidden

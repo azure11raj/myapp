@@ -25,14 +25,21 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [],
+            "scripts": [
+             "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js"
+
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+             "ssr": {
+               "entry": "server.ts"
+             }          
           },
           "configurations": {
             "production": {
@@ -68,7 +75,12 @@
               "buildTarget": "Mncloud:build:development"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+        "options": {
+          
+             "proxyConfig": "src/proxy.conf.json"
+        }
+
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -92,13 +104,19 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+
+            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "bc775c9e-f68e-4b70-b4fa-127984e3b681"
+    "analytics": "bc775c9e-f68e-4b70-b4fa-127984e3b681",
+    "cache": {
+    "enabled": false
+  }
   }
 }
