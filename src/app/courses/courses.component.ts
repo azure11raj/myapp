@@ -96,11 +96,13 @@ openModal(message:string)
               //alert(res.message);
               this.modalclose();
               this.Cleardata();
+              this.registercourse.reset();
               
             }else{
               //alert(res.message);
               this.alertspan = res.message;
              // this.modalclose();
+             this.registercourse.reset();
             }
           })
          
@@ -115,6 +117,7 @@ openModal(message:string)
            this.formData.mobile = "" ;
            this.formData.corename = "" ;
            this.formData.message= "" ;
+           this.alertspan="";
         
         }
 
@@ -153,6 +156,15 @@ openModal(message:string)
             }
           }
           
+        }
+
+        numberOnly(event:any): boolean {
+          const charCode = (event.which) ? event.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+               return false;
+            }
+            return true;
+        
         }
 
 }
