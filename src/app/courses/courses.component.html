@@ -39,17 +39,15 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                   <p class="category">Cloud Computing</p>
                   <!-- <p class="price">$169</p> -->
-                  <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >Cloud Computing</button> -->
                 </div>
 
-                <h3><a href="course-details.html">Microsoft Azure</a></h3>
+                <h3><a href="javascript:void(0)">Microsoft Azure</a></h3>
                 <p class="description">Azure is widely used for tasks like virtual machine hosting, app hosting, database management, AI, machine learning, and analytics.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <!-- <img src="assets/img/trainers/trainer-1-2.jpg" class="img-fluid" alt=""> -->
                     <!-- <a href="" class="trainer-link">Thangaraj</a> -->
-                    <!-- <a style="cursor: pointer; font-weight: bold;font-style: italic;" data-bs-toggle="modal" data-bs-target="#exampleModal">Register Here</a> -->
-                    <a  (click)="openModal('Azure')" style="cursor: pointer; font-weight: bold;font-style: italic;" >Register Here</a>
+                    <p>Register here </p>
                   </div>
                   <!-- <div class="trainer-rank d-flex align-items-center">
                     <i class="bi bi-person user-icon"></i>&nbsp;50
@@ -70,15 +68,13 @@
                   <!-- <p class="price">$250</p> -->
                 </div>
 
-                <h3><a href="course-details.html">Azure DevOps</a></h3>
+                <h3><a href="javascript:void(0)">Azure DevOps</a></h3>
                 <p class="description">Azure DevOps is a set of development tools and services offered by Microsoft for automating the software development life cycle.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <!-- <img src="assets/img/trainers/trainer-2-2.jpg" class="img-fluid" alt="">
                     <a href="" class="trainer-link">Thangaraj</a> -->
-                    <!-- <p>Explore further</p> -->
-                    <a  (click)="openModal('DevOps')" style="cursor: pointer; font-weight: bold;font-style: italic;" >Register Here</a>
-                    <!-- <a href="#" (click)="clickModal('Azure')" style="cursor: pointer; font-weight: bold;font-style: italic;" data-bs-toggle="modal" data-bs-target="#exampleModal">Register Here</a> -->
+                    <p>Register here </p>
                   </div>
                   <!-- <div class="trainer-rank d-flex align-items-center">
                     <i class="bi bi-person user-icon"></i>&nbsp;35
@@ -99,15 +95,13 @@
                   <!-- <p class="price">$180</p> -->
                 </div>
 
-                <h3><a href="course-details.html">JAVA</a></h3>
+                <h3><a href="javascript:void(0)">JAVA</a></h3>
                 <p class="description">Java is a high-level, object-oriented programming language that is designed to be platform-independent.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                   <div class="trainer-profile d-flex align-items-center">
                     <!-- <img src="assets/img/trainers/trainer-3-2.jpg" class="img-fluid" alt="">
                     <a href="" class="trainer-link">Siva</a> -->
-                    <!-- <p>Explore further</p> -->
-                    <!-- <a style="cursor: pointer; font-weight: bold;font-style: italic;" data-bs-toggle="modal" data-bs-target="#exampleModal">Register Here</a> -->
-                    <a  (click)="openModal('JAVA')" style="cursor: pointer; font-weight: bold;font-style: italic;" >Register Here</a>
+                    <p>Register here </p>
                   </div>
                   <!-- <div class="trainer-rank d-flex align-items-center">
                     <i class="bi bi-person user-icon"></i>&nbsp;20
@@ -122,62 +116,6 @@
         </div>
 
       </div>
-
-      <!--Cloud Computing Model-->
-     
-<div #modal class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Register {{this.corenames}} Cloud Computing</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form [formGroup]="registercourse" data-hs-cf-bound="true" >
-          <div class="form-group row">
-          <div class="mb-3">
-          
-            <input type="text" class="form-control" formControlName="name" [(ngModel)]="formData.name" name="Name" id="recipient-name" placeholder="name">
-            <span class="text-danger" *ngIf="name && name.invalid && (name.dirty || name.touched)">Enter username number</span>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="mb-3">
-            
-            <input type="text" class="form-control" name="Eamil" formControlName="email" [(ngModel)]="formData.email" id="recipient-name" placeholder="email">
-            <span class="text-danger" *ngIf="email && email.invalid && (email.dirty || email.touched)">Enter username number</span>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="mb-3">
-            
-            <input type="text" class="form-control"  name="Mobile" formControlName="mobile" [(ngModel)]="formData.mobile" id="recipient-name" placeholder="mobile" >
-            <span class="text-danger" *ngIf="mobile && mobile.invalid && (mobile.dirty || mobile.touched)">Enter username number</span>
-          </div>
-        </div>
-         
-          <div class="form-group row">
-          <div class="mb-3">
-            
-            <textarea class="form-control" name="Message" formControlName="message" [(ngModel)]="formData.message" id="message-text" placeholder="message"></textarea>
-            <span class="text-danger" *ngIf="message && message.invalid && (message.dirty || message.touched)">Enter username number</span>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <div class="mb-3">
-            <span  class="text-danger" >{{this.alertspan}}</span>
-          </div>
-        </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" [disabled]="registercourse.invalid" class="btn btn-primary" (click)="onSave()">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
     </section><!-- /Courses Section -->
 
