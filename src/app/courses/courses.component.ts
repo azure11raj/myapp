@@ -64,24 +64,6 @@ openModal(message:string)
   this.corenames = message;
   console.log('openModal called!');
   this.Modalshow();
-  // if (isPlatformBrowser(this.platformId)) {
-  //   const $ = (window as any)['$'];
-  //   if ($ && this.modal?.nativeElement) {
-  //     console.log('Showing modal...');
-  //    // $(this.modal.nativeElement).modal('show');
-  //     $(this.modal.nativeElement).modal({
-  //       backdrop: "static", // Prevent closing when clicking outside
-  //       keyboard: false, // Prevent closing with ESC key
-  
-  //     });
-  //     $(this.modal.nativeElement).modal('show');
-
-  //   } else {
-  //     console.warn('Modal element or jQuery not found!');
-  //   }
-  // }
-  
- 
  
  }
 
