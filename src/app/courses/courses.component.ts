@@ -72,7 +72,7 @@ openModal(message:string)
 
           this.formData.corename = this.corenames;
           this.corenames="";
-          this.http.post('https://localhost:7109/api/Users/CourseRegister',this.formData).subscribe((res:any) =>{
+          this.http.post('https://mnservice.azurewebsites.net/api/Users/CourseRegister',this.formData).subscribe((res:any) =>{
             debugger;
             if(res.result){
               //alert(res.message);
